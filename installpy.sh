@@ -22,7 +22,6 @@ directory=/srv/chroot/buster
 users=pi
 root-users=root
 preserve-environment=false
-aliases=default
 profile=default
 EOT
 sudo cp buster.conf /etc/schroot/chroot.d/
@@ -40,8 +39,8 @@ sudo cat <<"EOC" >> ~/.bashrc
 if [ "$LANG" = en_CA.UTF-8 ]
 then
         alias python3='schroot -c buster python3'
-        alias buster="schroot"
-        alias rbuster="sudo schroot"
+        alias buster="schroot -c buster"
+        alias rbuster="sudo schroot -c buster"
 else
         export LANG=en_CA.UTF-8
         export LC_ALL=C
