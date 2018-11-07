@@ -27,7 +27,7 @@ EOT
 sudo cp buster.conf /etc/schroot/chroot.d/
 sudo rm buster.conf
 
-sudo debootstrap --variant=buildd --arch=armel buster /srv/chroot/buster/ http://ftp.debian.org/debian/
+sudo debootstrap --variant=buildd buster /srv/chroot/buster/ http://ftp.debian.org/debian/
 sudo schroot -c buster -- apt -qq --yes install python3
 
 xhost +
